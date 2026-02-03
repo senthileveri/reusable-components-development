@@ -1,0 +1,9 @@
+.content-layout {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #F5F5F7;
+  // height: CALC(100vh - 130px); /* Set height to viewport height */
+  // height: 100vh;
+}
