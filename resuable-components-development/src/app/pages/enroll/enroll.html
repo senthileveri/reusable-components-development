@@ -6,13 +6,15 @@
                 Enroll in RewardsProgramName today
             </div>
             <br />
-            <button app-button variant="primary" size="lg">
-                Yes,I have a login
-            </button>
-            <br />
-            <button app-button variant="secondary" size="lg">
-                Link it to a digital credential
-            </button>
+            <div class="button">
+              <button app-button variant="primary" size="lg">
+                  Yes,I have a login
+              </button>
+              <br />
+              <button app-button variant="secondary" size="lg">
+                  Link it to a digital credential
+              </button>
+            </div>
             <!-- <div class="input">
                 <app-input label="Email address" placeholder=""></app-input>
             </div>
@@ -28,7 +30,16 @@
             <input type="password" appFloatingLabel label="Password" />
             <br/>
             <input type="password" appFloatingLabelPin label="Enter PIN" />
-
+            <br />
+            <div class="theme-label">Light Theme PIN Entry</div>
+            <div class="light-card">
+              <input type="tel" [length]="5" appPinEntry theme="light" (pinEntered)="onPinEntered($event)" />
+            </div>
+            <br />
+            <div class="theme-label">Dark Theme PIN Entry</div>
+            <div class="dark-card">
+              <input type="tel" [length]="5" appPinEntry theme="dark" (pinEntered)="onPinEntered($event)" />
+            </div>
         </div>
     </div>
 </div>

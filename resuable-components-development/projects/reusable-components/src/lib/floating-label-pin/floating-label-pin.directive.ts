@@ -2,7 +2,7 @@ import { Directive, Input, ElementRef, Renderer2, OnInit, HostListener } from '@
 
 @Directive({
   selector: 'input[appFloatingLabelPin]',
-  standalone: true
+  standalone: true,
 })
 export class FloatingLabelPinDirective implements OnInit {
   @Input() label!: string;
@@ -14,6 +14,10 @@ export class FloatingLabelPinDirective implements OnInit {
   constructor(private el: ElementRef, private renderer: Renderer2) {}
 
   ngOnInit(): void {
+
+    // Inject directive-specific CSS once
+    this.injectStyles();
+    
     const parent = this.renderer.createElement('div');
     this.renderer.addClass(parent, 'floating-label-pin-container');
 
@@ -59,5 +63,65 @@ export class FloatingLabelPinDirective implements OnInit {
     if (!this.el.nativeElement.value) {
       this.renderer.removeClass(this.labelElement, 'active');
     }
+  }
+
+  private injectStyles() {
+    const style = this.renderer.createElement('style');
+    style.textContent = `
+
+      .floating-label-pin-container {
+        position: relative;
+        width: var(--fullWidth);
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+
+      .floating-label-pin-container input {
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 14px 40px 6px 10px; /* space for toggle button */
+        /* width: 100%; */
+        font-size: var(--fontSize16);
+        outline: none;
+      }
+
+      .floating-label-pin-container input:focus {
+        border-color: var(--shuttleGray);
+      }
+
+      .floating-label {
+        position: absolute;
+        left: var(--fontSize12);
+        top: auto;
+        /* top: 12px; */
+        color: #777;
+        font-size: var(--fontSize16);
+        transition: all 0.1s ease-out;
+        transition-property: transform;
+        pointer-events: none;
+      }
+
+      .floating-label.active {
+        top: 2px;
+        font-size: var(--fontSize12);
+        color: var(--midnightGray);
+      }
+
+      .pin-toggle {
+        position: absolute;
+        background: none;
+        border: none;
+        color: var(--seaBlue);
+        cursor: pointer;
+        font-family: var(--fontFamily);
+        font-size: var(--fontSize14);
+        font-style: normal;
+        font-weight: var(--strong);
+      }
+
+
+    `;
+    document.head.appendChild(style);
   }
 }

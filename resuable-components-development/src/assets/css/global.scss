@@ -131,7 +131,8 @@
 --width400: 400px;
 --width412: 412px;
 --width522: 522px;
-    /* space-variables */
+--fullWidth: 100%;
+/* space-variables */
 
 --space0: 0px;
 --space4: 4px;
@@ -150,6 +151,12 @@
  /* border-variables */
 
 --border1: 1px;
+
+/* font weight*/
+
+--default: 400px;
+--semi: 500px;
+--strong: 600px;
 
 /* theme based / secondary -variables */
   --button-primary-font-color: var(--white);

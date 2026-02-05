@@ -1,16 +1,17 @@
 .floating-label-container {
   position: relative;
-  width: 100%;
+  width: var(--fullWidth);
   display: flex;
+  align-items: center;
 }
 
 .floating-label-container input {
-  border: 1px solid #ccc;
+  border: 1px solid var(--steelGray);
   border-radius: 4px;
   padding: 14px 10px 6px 10px; /* extra top padding for label space */
-  width: 100%;
-  font-size: 16px;
+  width: var(--fullWidth);
   outline: none;
+  font-size: var(--fontSize16);
 }
 
 .floating-label-container input:focus {
@@ -19,16 +20,18 @@
 
 .floating-label {
   position: absolute;
-  left: 12px;
-  top: 12px;
+  left: var(--space12);
+  top: auto;
   color: #777;
-  font-size: 16px;
-  transition: all 0.2s ease;
+  font-size: var(--fontSize16);
+  transition: all 0.1s ease-out;
+  transition-property: transform;
   pointer-events: none;
+
 }
 
 .floating-label.active {
   top: 2px;
-  font-size: 12px;
+  font-size: var(--fontSize12);
   color: var(--midnightGray);
 }
