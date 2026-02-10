@@ -12,7 +12,7 @@ import { heroUsers } from '@ng-icons/heroicons/outline';
 import { heroArrowLeftCircleMicro } from '@ng-icons/heroicons/micro'
 @Component({
   selector: 'app-enroll',
-  imports: [Button, FloatingLabelDirective,FloatingLabelPinDirective, Dialog, NgpDialogTrigger,PinEntryDirective, FloatingLabelDirective,FloatingLabelPinDirective],
+  imports: [Button, NgIcon, FloatingLabelDirective,FloatingLabelPinDirective, Dialog, NgpDialogTrigger,PinEntryDirective, FloatingLabelDirective,FloatingLabelPinDirective],
   templateUrl: './enroll.html',
   styleUrl: './enroll.scss',
   viewProviders: [provideIcons({ heroUsers, heroArrowLeftCircleMicro })]

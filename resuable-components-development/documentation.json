@@ -95,6 +95,141 @@
             "templateData": "<!-- <app-header></app-header> -->\n<router-outlet ></router-outlet>\n"
         },
         {
+            "name": "BeonButtonComponent",
+            "id": "component-BeonButtonComponent-e48b67a929aabf6a84bf91cf2ac3c0fc0676cc154555106b9d5325c11998f5e32caaa26ad111288424d7ca038f348401ca0c9d5442b84578eccd1c1ff8785928",
+            "file": "src/stories/beon-button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "beon-button",
+            "styleUrls": [
+                "./button.css"
+            ],
+            "styles": [],
+            "template": " <button  type=\"button\"\n  app-button\n  [variant]=\"variant\"\n  [size]=\"size\"\n [disabled]=\"disabled\"\n>\n  {{ label }}\n</button>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nWhat background color to use",
+                    "description": "<p>What background color to use</p>\n",
+                    "line": 27,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 34,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Button'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 874,
+                            "end": 887,
+                            "kind": 328,
+                            "id": 0,
+                            "flags": 16842752,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "tagName": {
+                                "pos": 875,
+                                "end": 883,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "required"
+                            },
+                            "comment": ""
+                        }
+                    ],
+                    "rawdescription": "\n\nButton contents\n\n",
+                    "description": "<p>Button contents</p>\n",
+                    "line": 41,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'md'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nHow large should the button be?",
+                    "description": "<p>How large should the button be?</p>\n",
+                    "line": 31,
+                    "type": "\"sm\" | \"md\" | \"lg\"",
+                    "decorators": []
+                },
+                {
+                    "name": "variant",
+                    "defaultValue": "'primary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nIs this the principal call to action on the page?",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 23,
+                    "type": "\"primary\" | \"secondary\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nOptional click handler",
+                    "description": "<p>Optional click handler</p>\n",
+                    "line": 45,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "Button"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { Button } from './../../projects/reusable-components/src/lib/buttons/button.component';\n\n@Component({\n  selector: 'beon-button',\n  standalone: true,\n  imports: [CommonModule, Button],\n  template: ` <button\n  type=\"button\"\n  app-button\n  [variant]=\"variant\"\n  [size]=\"size\"\n [disabled]=\"disabled\"\n>\n  {{ label }}\n</button>`,\n  styleUrls: ['./button.css'],\n})\nexport class BeonButtonComponent {\n  /** Is this the principal call to action on the page? */\n  @Input()\n  variant: 'primary' | 'secondary' = 'primary';\n\n  /** What background color to use */\n  @Input()\n  backgroundColor?: string;\n\n  /** How large should the button be? */\n  @Input()\n  size: 'sm' | 'md' | 'lg' = 'md';\n\n  @Input()\n  disabled = false;\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /** Optional click handler */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  \n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".storybook-button {\n  display: inline-block;\n  cursor: pointer;\n  border: 0;\n  border-radius: 3em;\n  font-weight: 700;\n  line-height: 1;\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n}\n.storybook-button--primary {\n  background-color: #555ab9;\n  color: white;\n}\n.storybook-button--secondary {\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n  background-color: transparent;\n  color: #333;\n}\n.storybook-button--small {\n  padding: 10px 16px;\n  font-size: 12px;\n}\n.storybook-button--medium {\n  padding: 11px 20px;\n  font-size: 14px;\n}\n.storybook-button--large {\n  padding: 12px 24px;\n  font-size: 16px;\n}\n",
+                    "styleUrl": "./button.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
+        },
+        {
             "name": "ButtonComponent",
             "id": "component-ButtonComponent-d7bf0323e6da130e2609e2af0117b4a8d7cd874132206af50bf43dfc37044485fe50f2867ea76525730dd195b9b95a43802a12dadc6ad5cd7bf2faa07f19f0da",
             "file": "src/stories/button.component.ts",
@@ -272,7 +407,7 @@
         },
         {
             "name": "Enroll",
-            "id": "component-Enroll-dfde88254ea0c0dd15fac739442feb53b1b6f856fc31837056bffff377db3db5b37116ba247211bc829c0f9413136639ba937055632b9762ebe2ed9b4eae55f7",
+            "id": "component-Enroll-21e2830f42c7ce55f9f4e71e6c3d1737a46c2ce199453cd913fb3713cd40bf0dbdae937670f61d3a76d66b8896af8816b5a85e03d65338f9d0883b550f615cb2",
             "file": "src/app/pages/enroll/enroll.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -285,7 +420,11 @@
             "templateUrl": [
                 "./enroll.html"
             ],
-            "viewProviders": [],
+            "viewProviders": [
+                {
+                    "name": "provideIcons({ heroUsers, heroArrowLeftCircleMicro })"
+                }
+            ],
             "hostDirectives": [],
             "inputsClass": [],
             "outputsClass": [],
@@ -299,7 +438,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 17
+                    "line": 21
                 },
                 {
                     "name": "states",
@@ -310,7 +449,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 18
+                    "line": 22
                 }
             ],
             "methodsClass": [
@@ -329,7 +468,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 26,
+                    "line": 30,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -357,6 +496,9 @@
                     "name": "Button"
                 },
                 {
+                    "name": "NgIcon"
+                },
+                {
                     "name": "FloatingLabelDirective",
                     "type": "directive"
                 },
@@ -369,18 +511,30 @@
                 },
                 {
                     "name": "NgpDialogTrigger"
+                },
+                {
+                    "name": "PinEntryDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "FloatingLabelDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "FloatingLabelPinDirective",
+                    "type": "directive"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\nimport { Button } from './../../../../projects/reusable-components/src/lib/buttons/button.component'; \nimport { Dialog } from './../../../../projects/reusable-components/src/lib/dialog/dialog';\nimport { NgpDialogTrigger } from 'ng-primitives/dialog';\n\nimport { FloatingLabelDirective } from './../../../../projects/reusable-components/src/lib/floating-label/floating-label.directive';\nimport { FloatingLabelPinDirective } from './../../../../projects/reusable-components/src/lib/floating-label-pin/floating-label-pin.directive';\nimport { PinEntryDirective } from './../../../../projects/reusable-components/src/lib/pin-entry/pin-entry.directive';\n@Component({\n  selector: 'app-enroll',\n  imports: [Button, FloatingLabelDirective,FloatingLabelPinDirective, Dialog, NgpDialogTrigger],\n  templateUrl: './enroll.html',\n  styleUrl: './enroll.scss',\n})\nexport class Enroll {\n  email: string = '';\n  states: string[] = [\n    'Alabama',\n    'Alaska',\n    'Arizona',\n    'Arkansas',\n    'California',\n  ];\n\n  onPinEntered(pin: string) {\n    console.log('PIN received from directive:', pin); // You can now use this PIN for validation, API calls, etc.\n  }\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\n\nimport { Button } from './../../../../projects/reusable-components/src/lib/buttons/button.component';\nimport { Dialog } from './../../../../projects/reusable-components/src/lib/dialog/dialog';\nimport { NgpDialogTrigger } from 'ng-primitives/dialog';\n\nimport { FloatingLabelDirective } from './../../../../projects/reusable-components/src/lib/floating-label/floating-label.directive';\nimport { FloatingLabelPinDirective } from './../../../../projects/reusable-components/src/lib/floating-label-pin/floating-label-pin.directive';\nimport { PinEntryDirective } from './../../../../projects/reusable-components/src/lib/pin-entry/pin-entry.directive';\nimport { NgIcon, provideIcons } from '@ng-icons/core';\nimport { heroUsers } from '@ng-icons/heroicons/outline';\nimport { heroArrowLeftCircleMicro } from '@ng-icons/heroicons/micro'\n@Component({\n  selector: 'app-enroll',\n  imports: [Button, NgIcon, FloatingLabelDirective,FloatingLabelPinDirective, Dialog, NgpDialogTrigger,PinEntryDirective, FloatingLabelDirective,FloatingLabelPinDirective],\n  templateUrl: './enroll.html',\n  styleUrl: './enroll.scss',\n  viewProviders: [provideIcons({ heroUsers, heroArrowLeftCircleMicro })]\n})\nexport class Enroll {\n  email: string = '';\n  states: string[] = [\n    'Alabama',\n    'Alaska',\n    'Arizona',\n    'Arkansas',\n    'California',\n  ];\n\n  onPinEntered(pin: string) {\n    console.log('PIN received from directive:', pin); // You can now use this PIN for validation, API calls, etc.\n  }\n}\n",
             "styleUrl": "./enroll.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"enroll-container\">\n<div class=\"enroll\">\n    <div class=\"enroll-card\">\n        <div class=\"copyContentLarge\">\n            <div class=\"header\">\n                Enroll in RewardsProgramName today\n            </div>\n            <br />\n            <div class=\"button\">\n              <button app-button variant=\"primary\" size=\"lg\">\n                  Yes,I have a login\n              </button>\n              <br />\n              <button app-button variant=\"secondary\" size=\"lg\">\n                  Link it to a digital credential\n              </button>\n            </div>\n            <button [ngpDialogTrigger]=\"dialog\" app-button variant=\"primary\" size=\"lg\">Open Dialog</button>\n            <ng-template #dialog let-close=\"close\">\n                <app-dialog header=\"Dialog header\">\n                    <p>This is a dialog. It can be used to display information or to ask for confirmation.</p>\n                    <p>\n                    You can use the dialog to display any content you want. It can be used to display forms,\n                    images, or any other content.\n                    </p>\n                    <p>\n                    You can also use the dialog to ask for confirmation. For example, you can use it to ask\n                    the user if they want to delete an item.\n                    </p>\n                    <button (click)=\"close()\" app-button variant=\"primary\" size=\"lg\">Close</button>\n                    <button (click)=\"close()\" app-button variant=\"secondary\" size=\"lg\">Delete</button>\n                </app-dialog>\n            </ng-template>\n            <button app-button variant=\"primary\" size=\"lg\">\n                Yes, I have a login\n            </button>\n            <br />\n            <button app-button variant=\"secondary\" size=\"lg\">\n                Link it to a digital credential\n            </button>\n            <!-- <div class=\"input\">\n                <app-input label=\"Email address\" placeholder=\"\"></app-input>\n            </div>\n\n            <div class=\"select\">\n                <app-select label=\"Select a state\" [options]=\"states\" placeholder=\"\"></app-select>\n            </div> -->\n            <br />\n            <input type=\"text\" appFloatingLabel label=\"Username\" />\n            <br />\n            <input type=\"email\" appFloatingLabel label=\"Email\" />\n            <br />\n            <input type=\"password\" appFloatingLabel label=\"Password\" />\n            <br/>\n            <input type=\"password\" appFloatingLabelPin label=\"Enter PIN\" />\n            <br />\n            <div class=\"theme-label\">Light Theme PIN Entry</div>\n            <div class=\"light-card\">\n              <input type=\"tel\" [length]=\"5\" appPinEntry theme=\"light\" (pinEntered)=\"onPinEntered($event)\" />\n            </div>\n            <br />\n            <div class=\"theme-label\">Dark Theme PIN Entry</div>\n            <div class=\"dark-card\">\n              <input type=\"tel\" [length]=\"5\" appPinEntry theme=\"dark\" (pinEntered)=\"onPinEntered($event)\" />\n            </div>\n        </div>\n    </div>\n</div>\n</div>\n"
+            "templateData": "<div class=\"enroll-container\">\n<div class=\"enroll\">\n    <div class=\"enroll-card\">\n        <div class=\"copyContentLarge\">\n            <div class=\"header\">\n                Enroll in RewardsProgramName today\n            </div>\n            <br />\n            <div class=\"button\">\n              <button app-button variant=\"primary\" size=\"lg\">\n                Yes,I have a login\n                <ng-icon name=\"heroArrowLeftCircleMicro\" />\n              </button>\n              <br />\n              <button app-button variant=\"secondary\" size=\"lg\">\n                  Link it to a digital credential\n              </button>\n            </div>\n            <button [ngpDialogTrigger]=\"dialog\" app-button variant=\"primary\" size=\"lg\">Open Dialog</button>\n            <ng-template #dialog let-close=\"close\">\n                <app-dialog header=\"Dialog header\">\n                    <p>This is a dialog. It can be used to display information or to ask for confirmation.</p>\n                    <p>\n                    You can use the dialog to display any content you want. It can be used to display forms,\n                    images, or any other content.\n                    </p>\n                    <p>\n                    You can also use the dialog to ask for confirmation. For example, you can use it to ask\n                    the user if they want to delete an item.\n                    </p>\n                    <button (click)=\"close()\" app-button variant=\"primary\" size=\"lg\">Close</button>\n                    <button (click)=\"close()\" app-button variant=\"secondary\" size=\"lg\">Delete</button>\n                </app-dialog>\n            </ng-template>\n            <button app-button variant=\"primary\" size=\"lg\">\n                Yes, I have a login\n            </button>\n            <br />\n            <button app-button variant=\"secondary\" size=\"lg\">\n                Link it to a digital credential\n            </button>\n            <!-- <div class=\"input\">\n                <app-input label=\"Email address\" placeholder=\"\"></app-input>\n            </div>\n\n            <div class=\"select\">\n                <app-select label=\"Select a state\" [options]=\"states\" placeholder=\"\"></app-select>\n            </div> -->\n            <br />\n            <input type=\"text\" appFloatingLabel label=\"Username\" />\n            <br />\n            <input type=\"email\" appFloatingLabel label=\"Email\" />\n            <br />\n            <input type=\"password\" appFloatingLabel label=\"Password\" />\n            <br/>\n            <input type=\"password\" appFloatingLabelPin label=\"Enter PIN\" />\n            <br />\n            <div class=\"theme-label\">Light Theme PIN Entry</div>\n            <div class=\"light-card\">\n              <input type=\"tel\" [length]=\"5\" appPinEntry theme=\"light\" (pinEntered)=\"onPinEntered($event)\" />\n            </div>\n            <br />\n            <div class=\"theme-label\">Dark Theme PIN Entry</div>\n            <div class=\"dark-card\">\n              <input type=\"tel\" [length]=\"5\" appPinEntry theme=\"dark\" (pinEntered)=\"onPinEntered($event)\" />\n            </div>\n        </div>\n    </div>\n</div>\n</div>\n"
         },
         {
             "name": "Header",
@@ -671,7 +825,7 @@
         ]
     },
     "coverage": {
-        "count": 8,
+        "count": 14,
         "status": "low",
         "files": [
             {
@@ -729,6 +883,15 @@
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
+            },
+            {
+                "filePath": "src/stories/beon-button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "BeonButtonComponent",
+                "coveragePercent": 71,
+                "coverageCount": "5/7",
+                "status": "good"
             },
             {
                 "filePath": "src/stories/button.component.ts",

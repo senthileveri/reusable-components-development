@@ -6,6 +6,7 @@ import { Directive, Input, ElementRef, Renderer2, OnInit, HostListener } from '@
 })
 export class FloatingLabelDirective implements OnInit {
   @Input() label!: string;
+  @Input() inputText!: string;
   private labelElement!: HTMLLabelElement;
 
   constructor(private el: ElementRef, private renderer: Renderer2) {}
