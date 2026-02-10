@@ -5,11 +5,15 @@ import { SelectComponent } from './../../../../projects/reusable-components/src/
 import { FloatingLabelDirective } from './../../../../projects/reusable-components/src/lib/floating-label/floating-label.directive';
 import { FloatingLabelPinDirective } from './../../../../projects/reusable-components/src/lib/floating-label-pin/floating-label-pin.directive';
 import { PinEntryDirective } from './../../../../projects/reusable-components/src/lib/pin-entry/pin-entry.directive';
+import { NgIcon, provideIcons } from '@ng-icons/core';
+import { heroUsers } from '@ng-icons/heroicons/outline';
+import { heroArrowLeftCircleMicro } from '@ng-icons/heroicons/micro'
 @Component({
   selector: 'app-enroll',
-  imports: [Button, InputComponent, SelectComponent, PinEntryDirective, FloatingLabelDirective,FloatingLabelPinDirective],
+  imports: [Button,NgIcon, InputComponent, SelectComponent, PinEntryDirective, FloatingLabelDirective,FloatingLabelPinDirective],
   templateUrl: './enroll.html',
   styleUrl: './enroll.scss',
+  viewProviders: [provideIcons({ heroUsers, heroArrowLeftCircleMicro })]
 })
 export class Enroll {
   email: string = '';

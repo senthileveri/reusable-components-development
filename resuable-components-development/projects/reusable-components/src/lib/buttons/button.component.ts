@@ -38,6 +38,7 @@ export type ButtonVariant =
         font-weight: var(--semi);
         line-height: var(--line-height-large);
         cursor: pointer;
+        gap: 10px;
     }
     :host[data-hover] {
       background-color: var(--ngp-background-hover);
