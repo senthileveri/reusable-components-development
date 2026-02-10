@@ -154,6 +154,8 @@ export type ButtonVariant =
     }
     :host[data-variant="secondary"]:host[disabled] {
         background-color: var(--button-secondary-disabled-background-color);
+        color: var(--button-secondary-disabled-font-color);
+        border: 1px solid var(--button-secondary-disabled-border-color, var(--accent-color));
         cursor: not-allowed;
     }
   `,

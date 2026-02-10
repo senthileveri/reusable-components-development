@@ -1,0 +1,103 @@
+import type { Meta, StoryObj } from '@storybook/angular';
+
+import { BeonButtonComponent } from './beon-button.component';
+// More on how to set up stories at: https://storybook.js.org/docs/writing-stories
+const meta: Meta<BeonButtonComponent> = {
+  title: 'Example/Beon-button',
+  component: BeonButtonComponent,
+  tags: ['autodocs']
+};
+
+export default meta;
+type Story = StoryObj<BeonButtonComponent>;
+
+// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
+export const Primarysm: Story = {
+    args: {
+        variant: 'primary',
+        size: 'sm',
+    },
+};
+
+export const Primarymd: Story = {
+    args: {
+        variant: 'primary',
+        size: 'md',
+    },
+};
+
+export const Primarylg: Story = {
+    args: {
+        variant: 'primary',
+        size: 'lg',
+    },
+};
+
+export const PrimarysmDisabled: Story = {
+    args: {
+        variant: 'primary',
+        size: 'sm',
+        disabled: true,
+    },
+};
+
+export const PrimarymdDisabled: Story = {
+    args: {
+        variant: 'primary',
+        size: 'md',
+        disabled: true,
+    },
+};
+
+export const PrimarylgDisabled: Story = {
+    args: {
+        variant: 'primary',
+        size: 'lg',
+        disabled: true,
+    },
+};
+
+export const Secondarysm: Story = {
+    args: {
+        variant: 'secondary',
+        size: 'sm',
+    },
+};
+
+export const Secondarymd: Story = {
+    args: {
+        variant: 'secondary',
+        size: 'md',
+    },
+};
+
+export const Secondarylg: Story = {
+    args: {
+        variant: 'secondary',
+        size: 'lg',
+    },
+};
+
+export const SecondarysmDisabled: Story = {
+    args: {
+        variant: 'secondary',
+        size: 'sm',
+        disabled: true,
+    },
+};
+
+export const SecondarymdDisabled: Story = {
+    args: {
+        variant: 'secondary',
+        size: 'md',
+        disabled: true,
+    },
+};
+
+export const SecondarylgDisabled: Story = {
+    args: {
+        variant: 'secondary',
+        size: 'lg',
+        disabled: true,
+    },
+};

@@ -16,6 +16,29 @@
                   Link it to a digital credential
               </button>
             </div>
+            <button [ngpDialogTrigger]="dialog" app-button variant="primary" size="lg">Open Dialog</button>
+            <ng-template #dialog let-close="close">
+                <app-dialog header="Dialog header">
+                    <p>This is a dialog. It can be used to display information or to ask for confirmation.</p>
+                    <p>
+                    You can use the dialog to display any content you want. It can be used to display forms,
+                    images, or any other content.
+                    </p>
+                    <p>
+                    You can also use the dialog to ask for confirmation. For example, you can use it to ask
+                    the user if they want to delete an item.
+                    </p>
+                    <button (click)="close()" app-button variant="primary" size="lg">Close</button>
+                    <button (click)="close()" app-button variant="secondary" size="lg">Delete</button>
+                </app-dialog>
+            </ng-template>
+            <button app-button variant="primary" size="lg">
+                Yes, I have a login
+            </button>
+            <br />
+            <button app-button variant="secondary" size="lg">
+                Link it to a digital credential
+            </button>
             <!-- <div class="input">
                 <app-input label="Email address" placeholder=""></app-input>
             </div>
