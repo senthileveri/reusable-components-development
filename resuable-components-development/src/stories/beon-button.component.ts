@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Button } from './../../projects/reusable-components/src/lib/buttons/button.component';
+//import { Button } from './../../projects/reusable-components/src/lib/buttons/button.component';
+import {BeonFlButton} from 'beon-web-ui-kit';
 
 @Component({
   selector: 'beon-button',
   standalone: true,
-  imports: [CommonModule, Button],
+  imports: [CommonModule, BeonFlButton],
   template: ` <button
   type="button"
   app-button
